@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<h:body>
+
+	<ui:composition template="/pages/private/index.xhtml">
+		<ui:define name="conteudo">
+			<p:dataTable id="datatable" var="professor"
+				value="#{professorListMB.listaProfessor}" paginator="true" rows="10">
+
+				<f:facet name="header">Lista de professor</f:facet>
+
+				<p:column headerText="Nome" sortBy="#{professor.nome}">
+					<h:outputText value="#{professor.nome}" />
+				</p:column>
+				<p:column headerText="Título">
+					<h:outputText value="#{professor.titulacao.titulo}" />
+				</p:column>
+				<p:column headerText="Sexo">
+					<h:outputText value="#{professor.sexo}" />
+				</p:column>
+				<p:column headerText="Instituição">
+					<h:outputText value="#{professor.iensino}" />
+				</p:column>
+				<p:column headerText="Departamento">
+					<h:outputText value="#{professor.departamento}" />
+				</p:column>
+				<p:column headerText="Data de admissão">
+					<h:outputText value="#{professor.dtAdmissao}" />
+				</p:column>
+				<p:column>
+					<p:commandLink
+						actionListener="#{professorEditMB.preAlterar(professor)}"
+						action="professorEdit.xhtml">alterar</p:commandLink>
+				</p:column>
+				<p:column>
+					<p:commandLink update="datatable"
+						actionListener="#{professorListMB.excluir(professor)}">excluir</p:commandLink>
+				</p:column>
+			</p:dataTable>
+		</ui:define>
+	</ui:composition>
+
+</h:body>
+</html>

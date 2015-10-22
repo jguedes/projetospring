@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<h:body>
+
+	<ui:composition template="/pages/private/index.xhtml">
+		<ui:define name="conteudo">
+			<p:panelGrid columns="1" styleClass="width600px">
+				<h:inputHidden value="#{publicacaoEditMB.publicacao.id}" />
+				<p:outputLabel value="Cadastro de Publicação"
+					style="font:30pt bold;" />
+				<p:inputText placeholder="Título" required="true" label="Título"
+					value="#{publicacaoEditMB.publicacao.titulo}"
+					styleClass="width500px" maxlength="100" />
+				<p:inputText placeholder="Descrição" required="true"
+					label="Descrição" value="#{publicacaoEditMB.publicacao.descricao}"
+					styleClass="width500px" maxlength="500" />
+
+				<p:selectOneMenu value="#{publicacaoEditMB.publicacao.aluno}"
+					style="width:150px">
+					<f:selectItem itemLabel="Selecione o Aluno" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{alunoListMB.listaAluno}" />
+				</p:selectOneMenu>
+
+				<p:selectOneMenu value="#{publicacaoEditMB.publicacao.professor}"
+					style="width:150px">
+					<f:selectItem itemLabel="Selecione o Professor" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{professorListMB.listaProfessor}" />
+				</p:selectOneMenu>
+
+				<p:selectOneMenu
+					value="#{publicacaoEditMB.publicacao.meioComunicacao}"
+					style="width:150px">
+					<f:selectItem itemLabel="Meio de Comunicação" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{meioComunicacaoListMB.listaMeioComunicacao}" />
+				</p:selectOneMenu>
+
+				<p:commandButton value="salvar"
+					action="#{publicacaoEditMB.salvar()}" ajax="false" />
+			</p:panelGrid>
+		</ui:define>
+	</ui:composition>
+
+</h:body>
+</html>

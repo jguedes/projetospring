@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<h:body>
+
+	<ui:composition template="/pages/private/index.xhtml">
+		<ui:define name="conteudo">
+			<p:dataTable id="datatable" var="meioComunicacao"
+				value="#{meioComunicacaoListMB.listaMeioComunicacao}"
+				paginator="true" rows="10">
+				
+				<f:facet name="header">Lista de meio de comunicação</f:facet>
+				
+				<p:column headerText="Descrição"
+					sortBy="#{meioComunicacao.descricao}">
+					<h:outputText value="#{meioComunicacao.descricao}" />
+				</p:column>
+				<p:column>
+					<p:commandLink
+						actionListener="#{meioComunicacaoEditMB.preAlterar(meioComunicacao)}"
+						action="meioComunicacaoEdit.xhtml">alterar</p:commandLink>
+				</p:column>
+				<p:column>
+					<p:commandLink update="datatable"
+						actionListener="#{meioComunicacaoListMB.excluir(meioComunicacao)}">excluir</p:commandLink>
+				</p:column>
+			</p:dataTable>
+		</ui:define>
+	</ui:composition>
+
+</h:body>
+</html>

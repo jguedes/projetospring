@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#pages#private#usuario#usuarioEdit.xhtml"
+  PATH="/pages/private/usuario/usuarioEdit.xhtml" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#private#usuario#usuarioEdit.xhtml:0"
+   NAME="item" PATH="/pages/private/usuario/usuarioEdit.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success::#pages#private#usuario#usuarioList.xhtml" NAME="output"
+    PATH="/pages/private/usuario/usuarioList.xhtml"
+    TARGET="rules:#pages#private#usuario#usuarioList.xhtml"
+    TITLE="success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#private#usuario#usuarioList.xhtml"
+  PATH="/pages/private/usuario/usuarioList.xhtml" SHAPE="240,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#private#titulacao#titulacaoEdit.xhtml"
+  PATH="/pages/private/titulacao/titulacaoEdit.xhtml" SHAPE="32,129,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#pages#private#titulacao#titulacaoEdit.xhtml:0" NAME="item"
+   PATH="/pages/private/titulacao/titulacaoEdit.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success::#pages#private#titulacao#titulacaoList.xhtml"
+    NAME="output" PATH="/pages/private/titulacao/titulacaoList.xhtml"
+    TARGET="rules:#pages#private#titulacao#titulacaoList.xhtml"
+    TITLE="success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#private#titulacao#titulacaoList.xhtml"
+  PATH="/pages/private/titulacao/titulacaoList.xhtml"
+  SHAPE="240,145,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#private#professor#professorEdit.xhtml"
+  PATH="/pages/private/professor/professorEdit.xhtml" SHAPE="32,241,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#pages#private#professor#professorEdit.xhtml:0" NAME="item"
+   PATH="/pages/private/professor/professorEdit.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success::#pages#private#professor#professorList.xhtml"
+    NAME="output" PATH="/pages/private/professor/professorList.xhtml"
+    TARGET="rules:#pages#private#professor#professorList.xhtml"
+    TITLE="success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#private#professor#professorList.xhtml"
+  PATH="/pages/private/professor/professorList.xhtml"
+  SHAPE="240,257,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#private#aluno#alunoEdit.xhtml"
+  PATH="/pages/private/aluno/alunoEdit.xhtml" SHAPE="32,353,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#private#aluno#alunoEdit.xhtml:0"
+   NAME="item" PATH="/pages/private/aluno/alunoEdit.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success::#pages#private#aluno#alunoList.xhtml" NAME="output"
+    PATH="/pages/private/aluno/alunoList.xhtml"
+    TARGET="rules:#pages#private#aluno#alunoList.xhtml" TITLE="success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#private#aluno#alunoList.xhtml"
+  PATH="/pages/private/aluno/alunoList.xhtml" SHAPE="240,369,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#pages#private#meioComunicacao#meioComunicacaoEdit.xhtml"
+  PATH="/pages/private/meioComunicacao/meioComunicacaoEdit.xhtml"
+  SHAPE="32,465,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#pages#private#meioComunicacao#meioComunicacaoEdit.xhtml:0"
+   NAME="item"
+   PATH="/pages/private/meioComunicacao/meioComunicacaoEdit.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success::#pages#private#meioComunicacao#meioComunicacaoList.xhtml"
+    NAME="output"
+    PATH="/pages/private/meioComunicacao/meioComunicacaoList.xhtml"
+    TARGET="rules:#pages#private#meioComunicacao#meioComunicacaoList.xhtml"
+    TITLE="success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#pages#private#meioComunicacao#meioComunicacaoList.xhtml"
+  PATH="/pages/private/meioComunicacao/meioComunicacaoList.xhtml"
+  SHAPE="240,481,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#pages#private#publicacao#publicacaoEdit.xhtml"
+  PATH="/pages/private/publicacao/publicacaoEdit.xhtml"
+  SHAPE="32,577,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#pages#private#publicacao#publicacaoEdit.xhtml:0"
+   NAME="item" PATH="/pages/private/publicacao/publicacaoEdit.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success::#pages#private#publicacao#publicacaoList.xhtml"
+    NAME="output" PATH="/pages/private/publicacao/publicacaoList.xhtml"
+    TARGET="rules:#pages#private#publicacao#publicacaoList.xhtml"
+    TITLE="success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#pages#private#publicacao#publicacaoList.xhtml"
+  PATH="/pages/private/publicacao/publicacaoList.xhtml"
+  SHAPE="240,593,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

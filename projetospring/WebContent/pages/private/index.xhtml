@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Projeto Academia</title>
+</h:head>
+<h:body>
+
+	<p:layout style="min-width:400px;min-height:1500px;">
+
+		<p:layoutUnit position="west" resizable="false" size="250">
+			<h:form>
+				<p:menu>
+					<p:submenu label="Professor">
+						<p:menuitem url="/pages/private/professor/professorEdit.xhtml"
+							value="Cadastrar professor" />
+						<p:menuitem url="/pages/private/professor/professorList.xhtml"
+							value="Listar professor"></p:menuitem>
+					</p:submenu>
+					<p:submenu label="Titulação">
+						<p:menuitem url="/pages/private/titulacao/titulacaoEdit.xhtml"
+							value="Cadastrar titulação" />
+						<p:menuitem url="/pages/private/titulacao/titulacaoList.xhtml"
+							value="Listar titulação"></p:menuitem>
+					</p:submenu>
+					<p:submenu label="Aluno">
+						<p:menuitem url="/pages/private/aluno/alunoEdit.xhtml"
+							value="Cadastrar aluno" />
+						<p:menuitem url="/pages/private/aluno/alunoList.xhtml"
+							value="Listar aluno"></p:menuitem>
+					</p:submenu>
+					<p:submenu label="Publicação">
+						<p:menuitem url="/pages/private/publicacao/publicacaoEdit.xhtml"
+							value="Cadastrar publicação" />
+						<p:menuitem url="/pages/private/publicacao/publicacaoList.xhtml"
+							value="Listar publicação"></p:menuitem>
+					</p:submenu>
+					<p:submenu label="Meio de Comunicação">
+						<p:menuitem
+							url="/pages/private/meioComunicacao/meioComunicacaoEdit.xhtml"
+							value="Cadastrar meio de comunicação" />
+						<p:menuitem
+							url="/pages/private/meioComunicacao/meioComunicacaoList.xhtml"
+							value="Listar meio de comunicação"></p:menuitem>
+					</p:submenu>
+				</p:menu>
+			</h:form>
+		</p:layoutUnit>
+
+		<p:layoutUnit id="layoutcenter" position="center">
+
+			<div id="conteudo">
+				<h:form id="form">
+					<p:growl id="growl" showDetail="true" sticky="true" />
+					<ui:insert name="conteudo"></ui:insert>
+				</h:form>
+			</div>
+		</p:layoutUnit>
+	</p:layout>
+
+</h:body>
+</html>

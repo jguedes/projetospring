@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<h:body>
+
+	<ui:composition template="/pages/private/index.xhtml">
+		<ui:define name="conteudo">
+			<p:panelGrid columns="1" styleClass="width600px">
+				<h:inputHidden value="#{alunoEditMB.aluno.id}" />
+
+				<p:outputLabel value="#{alunoEditMB.pageTitulo}"
+					style="font:30pt bold;" />
+
+				<p:inputText placeholder="Nome" required="true" label="Nome"
+					value="#{alunoEditMB.aluno.nome}" styleClass="width500px"
+					maxlength="100" size="100"
+					requiredMessage="Campo obrigatório não preenchido" />
+
+				<p:selectOneMenu value="#{alunoEditMB.aluno.sexo}"
+					style="width:150px">
+					<f:selectItem itemLabel="Selecione o sexo" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{alunoEditMB.listaSexo()}" />
+				</p:selectOneMenu>
+				
+				<p:selectOneMenu value="#{alunoEditMB.aluno.professor}"
+					style="width:150px">
+					<f:selectItem itemLabel="Professor" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{alunoEditMB.listaProfessor()}" />
+				</p:selectOneMenu>
+
+				<p:outputLabel value="CPF: ">
+					<p:inputMask id="cpf" value="#{alunoEditMB.aluno.cpf}"
+						mask="999.999.999-99"
+						requiredMessage="Campo obrigatório não preenchido" />
+				</p:outputLabel>
+
+
+				<p:panelGrid columns="1" styleClass="width600px">
+					<p:dataTable id="datatableTelefone" var="telefone"
+						value="#{alunoEditMB.aluno.telefones}">
+						<p:column headerText="Telefone" width="100">
+
+							<p:outputLabel value="DDD: ">
+								<p:inputMask id="ddd" value="#{telefone.ddd}" mask="99"
+									requiredMessage="Campo obrigatório não preenchido" />
+							</p:outputLabel>
+
+							<p:outputLabel value="Número: ">
+								<p:inputMask id="numero" value="#{telefone.numero}"
+									mask="999999999"
+									requiredMessage="Campo obrigatório não preenchido" />
+							</p:outputLabel>
+
+						</p:column>
+					</p:dataTable>
+				</p:panelGrid>
+
+				<p:panelGrid columns="1" styleClass="width600px">
+					<p:dataTable id="datatableEndereco" var="endereco"
+						value="#{alunoEditMB.aluno.enderecos}">
+						<p:column headerText="Endereço" width="100">
+
+							<p:inputText placeholder="Logradouro" required="true"
+								label="Logradouro" value="#{endereco.logradouro}"
+								styleClass="width500px" maxlength="200" size="100"
+								requiredMessage="Campo obrigatório não preenchido" />
+
+							<p:outputLabel value="Nº: ">
+								<p:inputText required="true" label="Nº"
+									value="#{endereco.numero}" styleClass="width500px"
+									maxlength="5"
+									requiredMessage="Campo obrigatório não preenchido" />
+							</p:outputLabel>
+
+							<p:inputText placeholder="Bairro" required="true" label="Bairro"
+								value="#{endereco.bairro}" styleClass="width500px"
+								maxlength="30" size="60"
+								requiredMessage="Campo obrigatório não preenchido" />
+
+							<p:selectOneMenu value="#{endereco.cidade}" style="width:150px">
+								<f:selectItem itemLabel="Cidade" itemValue=""
+									noSelectionOption="true" />
+								<f:selectItems value="#{alunoEditMB.listaCidade()}" />
+							</p:selectOneMenu>
+
+							<p:inputText placeholder="Uf" required="true" label="Uf"
+								value="#{endereco.uf}" styleClass="width500px" maxlength="30"
+								size="60" requiredMessage="Campo obrigatório não preenchido" />
+
+						</p:column>
+					</p:dataTable>
+				</p:panelGrid>
+
+
+				<p:commandButton value="salvar" action="#{alunoEditMB.salvar()}"
+					ajax="false" />
+
+			</p:panelGrid>
+
+		</ui:define>
+	</ui:composition>
+
+</h:body>
+</html>

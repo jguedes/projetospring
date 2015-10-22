@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<h:body>
+
+	<ui:composition template="/pages/private/index.xhtml">
+		<ui:define name="conteudo">
+			<p:dataTable id="datatable" var="aluno"
+				value="#{alunoListMB.listaAluno}" paginator="true" rows="10">
+				
+				<f:facet name="header">Lista de aluno</f:facet>
+				
+				<p:column headerText="Nome" sortBy="#{aluno.nome}">
+					<h:outputText value="#{aluno.nome}" />
+				</p:column>
+				<p:column headerText="Sexo">
+					<h:outputText value="#{aluno.sexo}" />
+				</p:column>
+				<p:column headerText="Cpf">
+					<h:outputText value="#{aluno.cpf}" />
+				</p:column>
+				<p:column headerText="Matrícula">
+					<h:outputText value="#{aluno.matricula}" />
+				</p:column>
+				<p:column headerText="Professor">
+					<h:outputText value="#{aluno.professor.nome}" />
+				</p:column>
+				<p:column>
+					<p:commandLink actionListener="#{alunoEditMB.preAlterar(aluno)}"
+						action="alunoEdit.xhtml">alterar</p:commandLink>
+				</p:column>
+				<p:column>
+					<p:commandLink update="datatable"
+						actionListener="#{alunoListMB.excluir(aluno)}">excluir</p:commandLink>
+				</p:column>
+			</p:dataTable>
+		</ui:define>
+	</ui:composition>
+
+</h:body>
+</html>
